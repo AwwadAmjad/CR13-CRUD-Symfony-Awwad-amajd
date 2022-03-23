@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events {% endblock %}
+
+{% block body %}
+    <h1 class="border border-secondary text-center fw-bold fz-5 p-4 bg-dark text-light">[  Our Events ]</h1> 
+<div class="row border border-light " style="margin-bottom: 8rem;" >
+
+   {% for event in events %}
+<div class='  col-lg-3 col-md-6 col-12 mt-4 '>
+ <div class="card " style="width: 18rem;">
+  <a href="{{ event.id }}"><img src='{{ event.image }}' class='card-img-top'alt=''></a>
+  <div class="card-body">
+    <h5 class="card-title">Name :{{ event.name }}</h5>
+    <h6 class="card-title">Email: {{ event.Email }}</h6>
+    <h6 class="card-title">TEL :{{ event.phone }}</h6>
+    <h6 class="card-title">Type :{{ event.Type }}</h6>
+    <h6 class="card-title">Date :{{ event.date ? event.date|date('Y-m-d') : '' }}</h6>
+  <a class="btn btn-primary  my-2" href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
+        <a class="btn btn-warning  my-2" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+        <a class="btn btn-info  my-2" href="{{ path('app_events_new') }}">Create new</a>
+  </div>
+</div></div>
+
+       {% else %}
+            
+                <h1 colspan="12">no records found</h1>
+            
+        {% endfor %}
+ 
+    
+{% endblock %}

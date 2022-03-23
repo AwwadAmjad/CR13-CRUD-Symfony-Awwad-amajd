@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap"; 
+body {
+    background-color:#eee;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+ .footer{
+    background-color:rgb(243, 230, 230);
+    height: 90px;
+    margin: 110px;
+    
+}
+.footer p{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
